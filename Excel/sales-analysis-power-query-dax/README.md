@@ -514,6 +514,18 @@ Step 7 → 📤 Load transformed queries into the Excel Data Model
 </div>
 
 ---
+## 🖼️ Dashboard Screenshots
+
+<div align="center">
+
+### 📊 Main Dashboard Overview
+
+<img src="Screenshot/dashboard_overview.png" width="100%"/>
+
+Interactive sales dashboard designed to monitor revenue, profit, transactions, product performance, and seasonal trends using KPI cards, Pivot Charts, slicers, and dynamic reporting.
+
+---
+
 
 
 <br>
