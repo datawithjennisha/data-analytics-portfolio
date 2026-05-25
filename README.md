@@ -1,4 +1,4 @@
-# data-analytics-portfolio
+# DATA-ANALYTICS-PORTFOLIO
 Data Analytics Portfolio featuring SQL, Power BI, Tableau, Python, Excel, KPI dashboards, and business insights.
 # Jennisha K – Data Analytics Portfolio
 
