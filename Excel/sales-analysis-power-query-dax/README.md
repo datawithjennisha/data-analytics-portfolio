@@ -107,6 +107,18 @@ Role      : Data Analyst
 
 ---
 
+## 🖼️ Dashboard Screenshots
+
+<div align="center">
+
+### 📊 Main Dashboard Overview
+
+<img src="Screenshot/dashboard_overview.png" width="100%"/>
+
+Interactive sales dashboard designed to monitor revenue, profit, transactions, product performance, and seasonal trends using KPI cards, Pivot Charts, slicers, and dynamic reporting.
+
+---
+
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Magnifying%20Glass%20Tilted%20Left.png" width="28"/> &nbsp; Business Questions Answered
 
 <div align="center">
@@ -514,17 +526,7 @@ Step 7 → 📤 Load transformed queries into the Excel Data Model
 </div>
 
 ---
-## 🖼️ Dashboard Screenshots
 
-<div align="center">
-
-### 📊 Main Dashboard Overview
-
-<img src="Screenshot/dashboard_overview.png" width="100%"/>
-
-Interactive sales dashboard designed to monitor revenue, profit, transactions, product performance, and seasonal trends using KPI cards, Pivot Charts, slicers, and dynamic reporting.
-
----
 
 
 
