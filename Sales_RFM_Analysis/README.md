@@ -84,265 +84,204 @@ Each customer is scored 1–5 on all three dimensions and assigned to a **busine
 | `DateTable` | Dimension | Calendar table for time intelligence |
 | `Tbl_Measure` | Measure Table | All DAX KPI measures |
 
----
+--
 
-## 🧮 DAX — Full Reference
+## 🎯 Business Problem
 
----
+Retail businesses often have thousands of customers, but not all customers contribute equally to revenue. Applying the same marketing strategy to every customer increases costs and reduces campaign effectiveness.
 
-### 📁 Tbl_Measure Table — KPI Measures
+The challenge is to identify:
 
-> 🔵 These are **measures** stored in the `Tbl_Measure` table.
-
-```dax
-MaxOrderDate = MAX('Superstore 2025'[Order Date])
-```
-
-```dax
-Total Customers = DISTINCTCOUNT('Superstore 2025'[Customer ID])
-```
-
-```dax
-Total Sales = SUM('Superstore 2025'[Sales])
-```
-
-```dax
-AvgRecency = AVERAGE(RFM_Calculation[Recency])
-```
-
-```dax
-AvgFrequency = AVERAGE(RFM_Calculation[Frequency])
-```
-
-```dax
-AvgMonetary = AVERAGE(RFM_Calculation[Monetary])
-```
+* Which customers generate the most value?
+* Which customers are likely to stop purchasing?
+* Which customers should receive retention offers?
+* How can marketing campaigns be personalized for better ROI?
 
 ---
 
-### 📈 YoY Variance Measures
+## 🎯 Project Objective
 
-> 🔵 Dynamic text measures showing Year-over-Year change with ▲ ▼ indicators.
+The primary objective of this analysis is to leverage RFM methodology to:
 
-```dax
-YoY SalesVariance =
- VAR LY = CALCULATE([Total Sales], SAMEPERIODLASTYEAR(DateTable[Date]))
- VAR LYFormatted = FORMAT(LY/1000, "$#,0") & "K"
- VAR yoyCalc = DIVIDE([Total Sales] - LY, LY)
- VAR yoyCalcFormatted = FORMAT(yoyCalc, "0.0%; (0.0%)")
- RETURN
-  SWITCH(
-    TRUE(),
-    yoyCalc > 0,   UNICHAR(9650) & " " & yoyCalcFormatted & " | LY " & LYFormatted,
-    ISBLANK(LY),   UNICHAR(8211) & " | No Data for Last Year",
-    yoyCalc = 0,   UNICHAR(8211) & " | No Change from Last Year",
-                   UNICHAR(9660) & " " & yoyCalcFormatted & " | LY " & LYFormatted)
-```
-
-```dax
-YoY FrequencyVar =
- VAR LY = CALCULATE([AvgFrequency], SAMEPERIODLASTYEAR(DateTable[Date]))
- VAR LYFormatted = FORMAT(LY, "#,0")
- VAR yoyCalc = DIVIDE(([AvgFrequency] - LY), LY)
- VAR yoyCalcFormatted = FORMAT(yoyCalc, "0.0%;(0.0%)")
- RETURN
-  SWITCH(
-    TRUE(),
-    yoyCalc > 0,   UNICHAR(9650) & " " & yoyCalcFormatted & " | LY " & LYFormatted,
-    ISBLANK(LY),   UNICHAR(8211) & " | No Data for Last Year ",
-                   UNICHAR(9660) & " " & yoyCalcFormatted & " | LY " & LYFormatted)
-```
-
-```dax
-YoY MonetaryVar =
- VAR LY = CALCULATE([AvgMonetary], SAMEPERIODLASTYEAR(DateTable[Date]))
- VAR LYFormatted = FORMAT(LY/1000, "$#,0.00") & "K"
- VAR yoyCalc = DIVIDE(([AvgMonetary] - LY), LY)
- VAR yoyCalcFormatted = FORMAT(yoyCalc, "0.0%;(0.0%)")
- RETURN
-  SWITCH(
-    TRUE(),
-    yoyCalc > 0,   UNICHAR(9650) & " " & yoyCalcFormatted & " | LY " & LYFormatted,
-    ISBLANK(LY),   UNICHAR(8211) & " | No Data for Last Year ",
-                   UNICHAR(9660) & " " & yoyCalcFormatted & " | LY " & LYFormatted)
-```
-
-```dax
-YoY RecencyVar =
- VAR LY = CALCULATE([AvgRecency], SAMEPERIODLASTYEAR(DateTable[Date]))
- VAR LYFormatted = FORMAT(LY, "#,0")
- VAR yoyCalc = DIVIDE(([AvgRecency] - LY), LY)
- VAR yoyCalcFormatted = FORMAT(yoyCalc, "0.0%;(0.0%)")
- RETURN
-  SWITCH(
-    TRUE(),
-    yoyCalc > 0,   UNICHAR(9650) & " " & yoyCalcFormatted & " | LY " & LYFormatted,
-    ISBLANK(LY),   UNICHAR(8211) & " | No Data for Last Year ",
-                   UNICHAR(9660) & " " & yoyCalcFormatted & " | LY " & LYFormatted)
-```
+* Retain high-value customers
+* Reduce customer churn
+* Improve marketing ROI
+* Increase repeat purchases
+* Personalize customer engagement strategies
+* Support data-driven business decisions
 
 ---
 
-### 🎨 Dynamic YoY Color Measures
+## 📖 What is RFM Analysis?
 
-> 🟢 Green = improvement &nbsp;|&nbsp; 🔴 Red = decline &nbsp;|&nbsp; 🟠 Orange = no prior year data
+RFM is a customer segmentation technique that evaluates customers based on three key metrics:
 
-```dax
-salesYoYColor =
- VAR LY  = CALCULATE([Total Sales], SAMEPERIODLASTYEAR(DateTable[Date]))
- VAR YOY = DIVIDE([Total Sales] - LY, LY)
- RETURN SWITCH(TRUE(),
-    YOY > 0,              "#00B200",
-    OR(ISBLANK(LY),LY=0), "Orange",
-                          "#FF0000")
-```
+| Metric    | Description                  | Business Question                       |
+| --------- | ---------------------------- | --------------------------------------- |
+| Recency   | Days since the last purchase | How recently did the customer buy?      |
+| Frequency | Number of purchases          | How often does the customer buy?        |
+| Monetary  | Total amount spent           | How much money does the customer spend? |
 
-```dax
-FrequencyYoYColor =
- VAR LY  = CALCULATE([AvgFrequency], SAMEPERIODLASTYEAR(DateTable[Date]))
- VAR YOY = DIVIDE([AvgFrequency] - LY, LY)
- RETURN SWITCH(TRUE(),
-    YOY > 0,              "#00B200",
-    OR(ISBLANK(LY),LY=0), "Orange",
-                          "#FF0000")
-```
-
-```dax
-monetaryYoYColor =
- VAR LY  = CALCULATE([AvgMonetary], SAMEPERIODLASTYEAR(DateTable[Date]))
- VAR YOY = DIVIDE([AvgMonetary] - LY, LY)
- RETURN SWITCH(TRUE(),
-    YOY > 0,              "#00B200",
-    OR(ISBLANK(LY),LY=0), "Orange",
-                          "#FF0000")
-```
-
-```dax
-recencyYoYColor =
- VAR LY  = CALCULATE([AvgRecency], SAMEPERIODLASTYEAR(DateTable[Date]))
- VAR YOY = DIVIDE([AvgRecency] - LY, LY)
- RETURN SWITCH(TRUE(),
-    YOY > 0,              "#00B200",
-    OR(ISBLANK(LY),LY=0), "Orange",
-                          "#FF0000")
-```
+Customers are scored and grouped into meaningful business segments based on these metrics.
 
 ---
 
-### 📅 DateTable — Calculated Table
+## 🛠 Tools & Technologies
 
-> 🟣 This is a **calculated table** created using DAX in the Data Model.
-
-```dax
-DateTable =
-ADDCOLUMNS (
-    CALENDAR(DATE(2021,1,1), DATE(2025,12,31)),
-    "Year",         YEAR([Date]),
-    "Month Number", MONTH([Date]),
-    "Month Name",   FORMAT([Date], "MMMM"),
-    "Year-Month",   FORMAT([Date], "YYYY-MM"),
-    "Quarter",      "Q" & FORMAT([Date], "Q"),
-    "Day",          DAY([Date]),
-    "Day of Week",  WEEKDAY([Date], 2),
-    "Day Name",     FORMAT([Date], "dddd"),
-    "Week Number",  WEEKNUM([Date], 2)
-)
-```
+* Power BI
+* DAX
+* Power Query
+* Excel
+* Data Modeling
+* Data Visualization
 
 ---
 
-### 🧮 RFM_Calculation — Calculated Table
+## 📈 Dashboard KPIs
 
-> 🟣 This is a **calculated table** — summarises one row per customer with Recency, Frequency, Monetary values.
-
-```dax
-RFM_Calculation =
-SUMMARIZE(
-    'Superstore 2025',
-    'Superstore 2025'[Customer ID],
-    'Superstore 2025'[Customer Name],
-    "Recency",   DATEDIFF(
-                    CALCULATE(MAX('Superstore 2025'[Order Date])),
-                    CALCULATE(MAX('Superstore 2025'[Order Date]), ALL('Superstore 2025')),
-                    DAY),
-    "Frequency", DISTINCTCOUNT('Superstore 2025'[Order ID]),
-    "Monetary",  SUM('Superstore 2025'[Sales])
-)
-```
+| KPI                    | Value       |
+| ---------------------- | ----------- |
+| Total Sales            | ₹2M         |
+| Average Recency        | 200 Days    |
+| Average Frequency      | 5 Purchases |
+| Average Monetary Value | ₹2.49K      |
 
 ---
 
-### 🏷️ Calculated Columns — inside RFM_Calculation Table
+## 🔍 Key Insights
 
-> 🟡 These are **calculated columns** added directly inside the `RFM_Calculation` table. They are evaluated row by row.
+### 1. Customer Segmentation Analysis
 
-**Recency_Score** — Ranks customers by recency (lower days = better score)
-```dax
-Recency_Score =
- VAR RankRecency = RANKX(ALL(RFM_Calculation), RFM_Calculation[Recency],, ASC)
- VAR TotalCust   = COUNTROWS(ALL(RFM_Calculation))
- RETURN CEILING(DIVIDE(RankRecency * 5, TotalCust), 1)
-```
+Customers were categorized into behavioral segments:
 
-**Frequency_Score** — Ranks customers by order count (higher = better score)
-```dax
-Frequency_Score =
- VAR RankFreq  = RANKX(ALL(RFM_Calculation), RFM_Calculation[Frequency],, DESC)
- VAR TotalCust = COUNTROWS(ALL(RFM_Calculation))
- RETURN CEILING(DIVIDE(RankFreq * 5, TotalCust), 1)
-```
-
-**Monetary_Score** — Ranks customers by total spend (higher = better score)
-```dax
-Monetary_Score =
- VAR RankMon   = RANKX(ALL(RFM_Calculation), RFM_Calculation[Monetary],, DESC)
- VAR TotalCust = COUNTROWS(ALL(RFM_Calculation))
- RETURN CEILING(DIVIDE(RankMon * 5, TotalCust), 1)
-```
-
-**Customer_Segment** — Assigns final segment label based on score combinations
-```dax
-Customer_Segment =
-SWITCH(
-    TRUE(),
-    -- 🏆 Champions: best across all 3 dimensions
-    RFM_Calculation[Recency_Score]   <= 2 &&
-    RFM_Calculation[Frequency_Score] <= 2 &&
-    RFM_Calculation[Monetary_Score]  <= 2,  "Champions",
-
-    -- 💎 Loyal Customers: frequent and fairly recent
-    RFM_Calculation[Frequency_Score] <= 2 &&
-    RFM_Calculation[Recency_Score]   <= 3,  "Loyal Customers",
-
-    -- 💸 Big Spenders: high spend but not recent
-    RFM_Calculation[Monetary_Score]  <= 2 &&
-    RFM_Calculation[Recency_Score]   >= 3,  "Big Spenders",
-
-    -- ⚠️ At Risk: used to buy often but recency is dropping
-    RFM_Calculation[Recency_Score]   >= 3 &&
-    RFM_Calculation[Frequency_Score] <= 3,  "At Risk",
-
-    -- 📉 Lost: worst scores across all 3 metrics
-    RFM_Calculation[Recency_Score]   =  5 &&
-    RFM_Calculation[Frequency_Score] =  5 &&
-    RFM_Calculation[Monetary_Score]  =  5,  "Lost",
-
-    -- 🔵 Default
-    "Others"
-)
-```
+| Segment         | Insight                                 | Recommended Action               |
+| --------------- | --------------------------------------- | -------------------------------- |
+| Champions       | Recent, frequent, high-value customers  | Reward with loyalty programs     |
+| Loyal Customers | Consistent purchasers                   | Upsell and cross-sell products   |
+| Big Spenders    | Major revenue contributors              | Provide premium offers           |
+| At Risk         | Previously active but becoming inactive | Launch retention campaigns       |
+| Lost Customers  | Long period without purchases           | Run win-back campaigns           |
+| Others          | Average customer behavior               | Nurture with targeted promotions |
 
 ---
 
-### 📌 DAX Object Types — Quick Reference
+### 2. Sales Trend Analysis
 
-| Symbol | Type | What It Is |
-|---|---|---|
-| 🔵 | **Measure** | Calculated at query time, context-aware, stored in Measure table |
-| 🟣 | **Calculated Table** | Created once at refresh, lives in the data model |
-| 🟡 | **Calculated Column** | Row-level computation, stored inside a table |
+#### Findings
+
+* Monthly sales fluctuate throughout the year.
+* Peak months indicate seasonal demand patterns.
+* Certain months show reduced sales activity.
+
+#### Business Impact
+
+* Supports inventory planning.
+* Improves workforce allocation.
+* Enables better forecasting and budgeting.
 
 ---
+
+### 3. Revenue Concentration
+
+#### Findings
+
+A relatively small group of customers, particularly Champions and Big Spenders, contributes a significant portion of total revenue.
+
+#### Business Impact
+
+* Retaining these customers protects revenue streams.
+* Customer retention efforts can be prioritized for maximum impact.
+
+---
+
+### 4. Customer Retention Risk
+
+#### Findings
+
+A considerable number of customers belong to the At Risk and Lost segments.
+
+#### Business Impact
+
+* Early intervention can prevent churn.
+* Targeted campaigns can improve customer lifetime value (CLV).
+
+---
+
+### 5. Customer Purchase Behavior
+
+#### Findings
+
+* Customers purchase approximately 5 times on average.
+* Average spending per customer is around ₹2.49K.
+* Average recency of 200 days indicates that many customers have not purchased recently.
+
+#### Business Impact
+
+* Highlights opportunities for re-engagement campaigns.
+* Helps identify inactive customer groups.
+
+---
+
+## 💡 Business Recommendations
+
+### 🏆 Champions
+
+* VIP membership programs
+* Exclusive discounts
+* Early access to new products
+
+### 🤝 Loyal Customers
+
+* Cross-selling opportunities
+* Referral reward programs
+* Loyalty incentives
+
+### 💰 Big Spenders
+
+* Premium product recommendations
+* Personalized promotions
+* Priority customer support
+
+### ⚠️ At Risk Customers
+
+* Reminder emails
+* Limited-time discounts
+* Personalized engagement campaigns
+
+### ❌ Lost Customers
+
+* Win-back campaigns
+* Reactivation offers
+* Special promotional discounts
+
+---
+
+## 📊 Business Value Delivered
+
+This dashboard enables stakeholders to:
+
+* Identify high-value customers
+* Improve customer retention strategies
+* Reduce churn risk
+* Optimize marketing spend
+* Increase customer lifetime value
+* Make data-driven business decisions
+
+
+## 🚀 Skills Demonstrated
+
+* Customer Segmentation
+* Business Intelligence
+* Data Analysis
+* Data Visualization
+* Power BI Dashboard Development
+* DAX Calculations
+* KPI Design
+* Retail Analytics
+* Customer Retention Analysis
+* Stakeholder Reporting
+
+
 
 ## 📊 Visuals in the Dashboard
 
