@@ -11,7 +11,7 @@
 
 ## 📸 Dashboard Preview
 
-![Sales RFM Dashboard](./assets/Sales_RFM_Dashboard.png)
+![Sales RFM Dashboard](Sales_RFM_dashboard.png)
 
 ---
 
