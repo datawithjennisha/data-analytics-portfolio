@@ -11,12 +11,16 @@
 <tr>
 <td align="center">
 
-## 📖 About me
+
+
+## About me
 
 
 I believe data is more than numbers—it is a powerful tool for understanding behavior, identifying opportunities, and driving better decisions.
 
 As an aspiring Data Analyst, I combine analytical thinking with data visualization to transform raw information into meaningful insights. Through SQL, Python, Power BI, and Business Intelligence practices, I continuously build solutions that bridge the gap between data and decision-making.
+
+
 
 
 ## ⚡ Analytics Tech Stack
@@ -40,6 +44,8 @@ As an aspiring Data Analyst, I combine analytical thinking with data visualizati
 <img src="https://github-readme-tech-stack.vercel.app/api/cards?title=Analytics+Stack&align=center&titleAlign=center&fontSize=20&lineCount=2&theme=github_dark&line1=sql,SQL,FFD700;python,Python,3776AB;powerbi,PowerBI,F2C811;&line2=tableau,Tableau,E97627;excel,Excel,217346;git,Git,F05032;"/>
 
 </p>
+
+
 
 ## 🚀 Featured Projects
 
@@ -148,6 +154,8 @@ As an aspiring Data Analyst, I combine analytical thinking with data visualizati
 
 </table>
 
+
+
 ## 🎓 Certifications
 
 <p align="center">
@@ -173,6 +181,8 @@ As an aspiring Data Analyst, I combine analytical thinking with data visualizati
 <img src="https://img.shields.io/badge/DataCamp-Joining_Data_in_SQL-03EF62?style=for-the-badge&logo=datacamp&logoColor=white"/>
 
 </p>
+
+
 
 ## 🏆 Achievements & Highlights
 
@@ -254,9 +264,13 @@ Workflows & Tools
 </tr>
 </table>
 
+
+
 ## 🤝 Let's Connect
 
 <div align="center">
+
+
 
 ### 💬 Open to Data Analytics, Business Intelligence & Collaboration Opportunities
 
