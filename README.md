@@ -11,7 +11,7 @@
 <tr>
 <td align="center">
 
-## 📖 My Analytics Journey
+## 📖 About me
 
 
 I believe data is more than numbers—it is a powerful tool for understanding behavior, identifying opportunities, and driving better decisions.
