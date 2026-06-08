@@ -1,7 +1,6 @@
-
 <div align="center">
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=rounded&height=150&color=0:172554,50:2563EB,100:60A5FA&text=JENNISHA%20K&fontSize=38&fontColor=FFFFFF&animation=twinkling"/>
+<img width="100%" src="https://capsule-render.vercel.app/api?type=rect&height=150&color=0:172554,50:2563EB,100:60A5FA&text=JENNISHA%20K&fontSize=38&fontColor=FFFFFF&animation=twinkling"/>
 
 <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=20&duration=3000&pause=1000&color=60A5FA&center=true&vCenter=true&width=850&lines=Data+Analytics+Portfolio;Turning+Complex+Data+Into+Simple+Stories;SQL+%7C+Python+%7C+Tableau+%7C+Power+BI;Learning+Every+Day"/>
 
@@ -10,7 +9,8 @@
 <img align="right" alt="Coding" width="320" src="https://raw.githubusercontent.com/devSouvik/devSouvik/master/gif3.gif">
 
 
-## About me
+
+## Professional Summary
 
 
 I believe data is more than numbers—it is a powerful tool for understanding behavior, identifying opportunities, and driving better decisions.
@@ -20,7 +20,7 @@ As an aspiring Data Analyst, I combine analytical thinking with data visualizati
 
 
 
-## ⚡ Analytics Tech Stack
+## Analytics Tech Stack
 
 <p align="center">
 
@@ -44,7 +44,7 @@ As an aspiring Data Analyst, I combine analytical thinking with data visualizati
 
 
 
-## 🚀 Featured Projects
+## Project Highlights
 
 <table>
 <tr>
@@ -287,9 +287,16 @@ Workflows & Tools
 
 <br><br>
 
+## 💙 Beyond Analytics
+
+I believe growth happens when curiosity meets consistency.
+
+Whether analyzing data, learning new technologies,
+or overcoming challenges, I strive to transform
+complexity into clarity and information into impact.
+
+
 ⭐ Thanks for visiting my Data Analytics Portfolio
 
-📊 Turning Data Into Insights | 📈 Driving Data-Driven Decisions
 
-</div>
 
