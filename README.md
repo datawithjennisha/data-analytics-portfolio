@@ -1,16 +1,10 @@
 <div align="center">
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=180&color=0:FFD700,40:FFB300,70:FF8C00,100:FF4500&text=JENNISHA%20K&fontSize=45&fontColor=FFFFFF&animation=fadeIn"/>
+<img width="100%" src="https://capsule-render.vercel.app/api?type=rounded&height=150&color=0:172554,50:2563EB,100:60A5FA&text=JENNISHA%20K&fontSize=38&fontColor=FFFFFF&animation=twinkling"/>
+
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=20&duration=3000&pause=1000&color=60A5FA&center=true&vCenter=true&width=850&lines=Data+Analytics+Portfolio;Turning+Complex+Data+Into+Simple+Stories;SQL+%7C+Python+%7C+Tableau+%7C+Power+BI;Learning+Every+Day"/>
 
 </div>
-
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=22&duration=2500&pause=1000&color=FFD700&center=true&width=850&lines=Turning+Data+Into+Meaningful+Insights;Analyzing+Trends+%7C+Solving+Problems;Building+Dashboards+That+Tell+Stories;SQL+%7C+Python+%7C+Power+BI+%7C+Tableau;Data+Driven+%7C+Insight+Focused+%7C+Impact+Oriented"/>
-
-
-<table align="center">
-<tr>
-<td align="center">
-
 
 
 ## About me
