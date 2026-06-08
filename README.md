@@ -1,3 +1,4 @@
+
 <div align="center">
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=rounded&height=150&color=0:172554,50:2563EB,100:60A5FA&text=JENNISHA%20K&fontSize=38&fontColor=FFFFFF&animation=twinkling"/>
@@ -5,6 +6,8 @@
 <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=20&duration=3000&pause=1000&color=60A5FA&center=true&vCenter=true&width=850&lines=Data+Analytics+Portfolio;Turning+Complex+Data+Into+Simple+Stories;SQL+%7C+Python+%7C+Tableau+%7C+Power+BI;Learning+Every+Day"/>
 
 </div>
+
+<img align="right" alt="Coding" width="320" src="https://raw.githubusercontent.com/devSouvik/devSouvik/master/gif3.gif">
 
 
 ## About me
