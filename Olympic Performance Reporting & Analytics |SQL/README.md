@@ -1,82 +1,82 @@
 # 🏅 Olympic Performance Analytics Dashboard
 
-> A SQL & Power BI analytics project focused on Olympic athlete performance, participation trends, medal efficiency, and economic impact analysis through interactive reporting and business intelligence dashboards.
+> Transforming Olympic data into actionable insights through SQL Reporting, KPI Analysis, and Interactive Power BI Dashboards.
 
 ---
 
 ## 📌 Project Overview
 
-The Olympic Performance Analytics Dashboard transforms Olympic data into meaningful business insights using SQL reporting and Power BI visualization techniques.
+The Olympic Performance Analytics Dashboard is an end-to-end Business Intelligence project designed to analyze Olympic athlete performance, participation trends, medal efficiency, and the impact of economic indicators on sporting success.
 
-The project integrates athlete information, Olympic event results, country demographics, and economic indicators to analyze performance trends, participation patterns, medal efficiency, and regional success factors.
+Using a relational Olympic database consisting of athlete profiles, event participation records, medal achievements, country information, and economic statistics, the project demonstrates how advanced SQL reporting and Power BI visualization techniques can be used to convert raw data into meaningful business insights.
 
-Through advanced SQL queries and interactive Power BI dashboards, the project demonstrates how data can be leveraged to support analytical reporting, KPI tracking, benchmarking, and decision-making.
+The solution combines data modeling, SQL analytics, KPI reporting, and interactive dashboard development to support performance benchmarking and strategic analysis. Through the use of Common Table Expressions (CTEs), Joins, Aggregate Functions, Window Functions, and KPI calculations, the project uncovers patterns that would otherwise remain hidden within large datasets.
+
+This project simulates a real-world Business Intelligence workflow, beginning with data extraction and transformation, followed by analytical reporting and dashboard development to support data-driven decision-making.
 
 ---
 
 ## 🎯 Business Objectives
 
-- Identify top-performing Olympic athletes based on gold medal achievements.
-- Analyze participation trends across Olympic events by gender.
-- Measure country-level medal efficiency using population-adjusted metrics.
-- Assess the relationship between GDP and Olympic performance.
-- Build an interactive Power BI dashboard for performance monitoring and analysis.
+The primary objectives of this project were to:
+
+* Identify the highest-performing Olympic athletes based on gold medal achievements.
+* Analyze participation trends across Olympic events by gender.
+* Evaluate Olympic success using population-adjusted medal efficiency metrics.
+* Assess the relationship between economic strength and athletic performance.
+* Develop KPI-driven analytical reports for performance monitoring.
+* Design an interactive dashboard that enables users to explore Olympic performance from multiple perspectives.
 
 ---
 
-## 🗄️ Database Schema
+## 🗄️ Data Model Overview
 
-The project uses a relational database consisting of five tables:
+The project utilizes a relational database containing five interconnected tables:
 
 ### Athletes
-Stores athlete demographic information.
+
+Contains athlete demographic information including name, gender, age, height, and weight.
 
 ### Summer Games
-Stores Summer Olympic event participation and medal results.
+
+Stores Summer Olympic event participation and medal achievements.
 
 ### Winter Games
-Stores Winter Olympic event participation and medal results.
+
+Stores Winter Olympic event participation and medal achievements.
 
 ### Countries
-Stores country and regional information.
+
+Contains country and regional classification information.
 
 ### Country Statistics
-Stores GDP, population, and Nobel Prize data by country.
+
+Stores economic and demographic indicators including GDP, population, and Nobel Prize counts.
+
+The relationships between these tables enable multi-dimensional analysis across athletes, countries, events, demographics, and economic factors.
 
 ---
 
-## 🛠️ Tools & Technologies
+## 📊 Dashboard Overview
 
-| Category | Technology |
-|-----------|------------|
-| Database | SQL |
-| Reporting | SQL Queries |
-| Visualization | Power BI |
-| Data Modeling | Relational Database |
-| Analytics | KPI Reporting |
-| Dashboarding | Power BI Desktop |
+The interactive Power BI dashboard was designed to provide a comprehensive view of Olympic performance through KPI monitoring, analytical reporting, and dynamic filtering capabilities.
 
----
+### Dashboard KPIs
 
-## 📊 Dashboard KPIs
+* Total Athletes
+* Total Medals
+* Total Gold Medals
+* Countries Analyzed
 
-### Total Athletes
+### Interactive Filters
 
-Tracks the total number of athletes participating in Olympic events.
+* Year
+* Region
+* Country
+* Sport
+* Gender
 
-### Total Medals
-
-Measures total medals earned across all events.
-
-### Countries Analyzed
-
-Tracks the number of participating countries.
-
-### Total Gold Medals
-
-Measures overall gold medal achievements.
-
----
+### Analytical Reports
 
 # 📈 Analytical Reports
 
@@ -84,9 +84,9 @@ Measures overall gold medal achievements.
 
 ## 01. Top Athletes by Gold Medals
 
-### Objective
+### Business Objective
 
-Identify the most successful Olympic athletes based on total Summer Olympic gold medals.
+Identify and rank the most successful Olympic athletes based on total Summer Olympic gold medals won.
 
 ### SQL Query
 
@@ -114,25 +114,29 @@ FROM athlete_gold_medals
 ORDER BY athlete_rank;
 ```
 
-### Skills Used
+### Skills Applied
 
-- CTEs
-- Joins
-- Aggregate Functions
-- Window Functions
-- Ranking Functions
+* Common Table Expressions (CTEs)
+* Joins
+* Aggregate Functions
+* Window Functions
+* Ranking Functions
 
-### Power BI Visual
+### Visualization
 
-- Horizontal Bar Chart
+Horizontal Bar Chart
+
+### Key Insight
+
+The analysis identified the highest-performing Olympic athletes and highlighted the concentration of gold medal achievements among elite competitors.
 
 ---
 
 ## 02. Gender Participation by Event
 
-### Objective
+### Business Objective
 
-Analyze athlete participation patterns across Olympic events by gender.
+Analyze athlete participation trends across Olympic events by gender.
 
 ### SQL Query
 
@@ -152,24 +156,28 @@ ORDER BY
     participant_count DESC;
 ```
 
-### Skills Used
+### Skills Applied
 
-- Joins
-- GROUP BY
-- COUNT(DISTINCT)
-- Demographic Analysis
+* Joins
+* GROUP BY
+* COUNT(DISTINCT)
+* Demographic Analysis
 
-### Power BI Visual
+### Visualization
 
-- 100% Stacked Column Chart
+100% Stacked Column Chart
+
+### Key Insight
+
+Participation analysis revealed variations in gender representation across sports and highlighted participation trends within Olympic events.
 
 ---
 
 ## 03. Country Medal Efficiency Analysis
 
-### Objective
+### Business Objective
 
-Measure Olympic performance relative to country population.
+Benchmark Olympic success by calculating medals earned relative to country population size.
 
 ### SQL Query
 
@@ -199,25 +207,29 @@ WHERE cs.year = 2024
 ORDER BY medals_per_million DESC;
 ```
 
-### Skills Used
+### Skills Applied
 
-- KPI Reporting
-- CTEs
-- Joins
-- Aggregate Functions
-- Analytical Reporting
+* KPI Reporting
+* CTEs
+* Joins
+* Aggregate Functions
+* Analytical Reporting
 
-### Power BI Visual
+### Visualization
 
-- Clustered Column Chart
+Clustered Column Chart
+
+### Key Insight
+
+Population-adjusted metrics revealed countries that achieved exceptional Olympic success relative to their size, enabling fairer performance comparisons.
 
 ---
 
 ## 04. GDP vs Olympic Performance Analysis
 
-### Objective
+### Business Objective
 
-Evaluate the relationship between economic strength and Olympic success.
+Evaluate the relationship between economic strength and Olympic performance outcomes.
 
 ### SQL Query
 
@@ -248,87 +260,123 @@ GROUP BY c.region
 ORDER BY total_medals DESC;
 ```
 
-### Skills Used
+### Skills Applied
 
-- CTEs
-- Joins
-- Aggregate Functions
-- Comparative Analysis
-- Business Intelligence Reporting
+* CTEs
+* Joins
+* Aggregate Functions
+* Comparative Analysis
+* Business Intelligence Reporting
 
-### Power BI Visual
+### Visualization
 
-- Scatter Plot
+Scatter Plot
+
+### Key Insight
+
+The analysis suggested a positive relationship between economic strength and Olympic success, while also highlighting notable exceptions among countries and regions.
+
+
+## 🔍 Key Findings
+
+### 🏆 Athlete Performance Analysis
+
+Athlete ranking analysis identified the most successful Olympic competitors based on cumulative gold medal achievements. SQL Window Functions were used to generate dynamic rankings, enabling performance comparison across athletes and events.
+
+Key observations include:
+
+* Elite athletes contribute disproportionately to total medal counts.
+* Gold medal distribution is concentrated among a relatively small group of athletes.
+* Ranking reports provide a clear framework for identifying top performers.
 
 ---
 
-## 🔍 Key Insights
+### 👥 Gender Participation Analysis
 
-### Athlete Performance
+Participation analysis revealed variations in athlete representation across Olympic events.
 
-- Identified the highest-performing Olympic athletes based on gold medal achievements.
-- Generated athlete ranking reports using SQL Window Functions.
-- Revealed concentration of medal success among elite athletes.
+Key observations include:
 
-### Gender Participation
+* Certain sports exhibit stronger participation from one gender.
+* Participation distribution varies significantly across events.
+* Gender-based reporting helps identify demographic engagement patterns.
 
-- Evaluated participation patterns across Olympic events.
-- Highlighted differences in gender representation across sports.
-- Provided demographic participation insights.
+---
 
-### Medal Efficiency
+### 🌍 Country Medal Efficiency Analysis
 
-- Benchmarked countries using population-adjusted medal metrics.
-- Revealed strong-performing nations beyond traditional medal rankings.
-- Enabled fair comparison across countries of different sizes.
+Traditional medal rankings often favor highly populated countries. To address this limitation, medal efficiency metrics were calculated using medals per million population.
 
-### Economic Impact
+Key observations include:
 
-- Assessed relationships between GDP and Olympic performance.
-- Observed positive trends between economic strength and medal success.
-- Identified regional differences in Olympic competitiveness.
+* Several smaller nations demonstrated exceptional Olympic efficiency.
+* Population-adjusted metrics provide a more balanced assessment of performance.
+* Normalized comparisons reveal strong-performing countries that may not rank highly by total medal count alone.
+
+---
+
+### 📈 Economic Impact Analysis
+
+Economic indicators were analyzed to evaluate their relationship with Olympic success.
+
+Key observations include:
+
+* Regions with stronger GDP levels generally achieved higher medal counts.
+* Economic resources may contribute positively to athlete development and sports infrastructure.
+* Significant regional variations exist in Olympic competitiveness and investment capacity.
 
 ---
 
 ## 🚀 Business Impact
 
-This project demonstrates how SQL and Power BI can be combined to transform raw datasets into actionable business intelligence solutions.
+This project demonstrates how modern analytics solutions can transform complex datasets into actionable intelligence.
 
-Key outcomes include:
+The techniques applied in this project closely mirror real-world Business Intelligence and Data Analytics workflows used across industries for performance measurement, KPI tracking, benchmarking, and strategic decision-making.
 
-- Performance benchmarking
-- KPI monitoring
-- Trend analysis
-- Comparative reporting
-- Interactive dashboard development
-- Data-driven decision support
+Business value delivered includes:
 
----
+* Performance Benchmarking
+* KPI Monitoring
+* Comparative Analysis
+* Trend Identification
+* Executive Reporting
+* Interactive Dashboarding
+* Data-Driven Decision Support
 
-## 📷 Dashboard Preview
-
-> Add your Power BI dashboard screenshot here.
-
-```md
-![Olympic Dashboard](dashboard.png)
-```
+The project showcases the practical application of SQL and Power BI to solve analytical problems and generate business insights from large relational datasets.
 
 ---
 
 ## 📚 Skills Demonstrated
 
-- SQL Reporting
-- Data Analysis
-- Data Modeling
-- Power BI
-- KPI Development
-- Dashboard Design
-- Window Functions
-- Aggregate Functions
-- CTEs
-- Joins
-- Analytical Reporting
-- Business Intelligence
+### SQL
+
+* Common Table Expressions (CTEs)
+* Joins
+* Aggregate Functions
+* Window Functions
+* Ranking Functions
+* Analytical Queries
+* KPI Calculations
+
+### Power BI
+
+* Data Modeling
+* Relationships
+* DAX Measures
+* Interactive Dashboards
+* KPI Cards
+* Slicers & Filters
+* Business Intelligence Reporting
+
+### Analytics
+
+* Performance Analysis
+* Trend Analysis
+* Demographic Analysis
+* Benchmarking
+* Data Visualization
+* Business Intelligence
 
 ---
 
@@ -336,7 +384,6 @@ Key outcomes include:
 
 **Jennisha K**
 
-Aspiring Data Analyst | SQL | Power BI | Excel | Python | Tableau
+Data Analyst | SQL | Power BI | Python | Tableau | Excel
 
----
-⭐ If you found this project useful, consider giving it a star.
+Passionate about transforming data into actionable insights through analytics, reporting, and visualization.
