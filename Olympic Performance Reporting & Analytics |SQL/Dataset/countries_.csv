@@ -1,0 +1,51 @@
+id,country,region
+1,United States,North America
+2,Canada,North America
+3,Mexico,North America
+4,Brazil,South America
+5,Argentina,South America
+6,Chile,South America
+7,United Kingdom,Europe
+8,Germany,Europe
+9,France,Europe
+10,Italy,Europe
+11,Spain,Europe
+12,Netherlands,Europe
+13,Sweden,Europe
+14,Norway,Europe
+15,Romania,Europe
+16,Poland,Europe
+17,Ukraine,Europe
+18,Greece,Europe
+19,China,Asia
+20,Japan,Asia
+21,India,Asia
+22,South Korea,Asia
+23,Indonesia,Asia
+24,Thailand,Asia
+25,Malaysia,Asia
+26,Singapore,Asia
+27,Australia,Oceania
+28,New Zealand,Oceania
+29,South Africa,Africa
+30,Nigeria,Africa
+31,Kenya,Africa
+32,Egypt,Africa
+33,Morocco,Africa
+34,Ethiopia,Africa
+35,Jamaica,Caribbean
+36,Cuba,Caribbean
+37,Bahamas,Caribbean
+38,Turkey,Asia
+39,Saudi Arabia,Asia
+40,UAE,Asia
+41,Pakistan,Asia
+42,Bangladesh,Asia
+43,Sri Lanka,Asia
+44,Portugal,Europe
+45,Belgium,Europe
+46,Switzerland,Europe
+47,Austria,Europe
+48,Denmark,Europe
+49,Finland,Europe
+50,Ireland,Europe
