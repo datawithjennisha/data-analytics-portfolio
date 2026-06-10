@@ -300,14 +300,14 @@ The methodologies used in this project closely align with real-world analytics w
 
 ---
 
-# Dashboard Preview
 
-Insert Tableau Dashboard Screenshot Below
+## 📷 Dashboard Snapshot
 
-```md
-![Prime Video Analytics Dashboard](dashboard.png)
-```
+<p align="center">
+  <img src="prime_dashboard.png" alt="Prime Video Dashboard" width="100%">
+</p>
 
+---
 ---
 
 # Technologies Used
